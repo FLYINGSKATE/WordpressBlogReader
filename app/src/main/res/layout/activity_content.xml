@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".content">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/ic_launcher_background"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsableToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:collapsedTitleGravity="start"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+            app:contentScrim="?attr/colorPrimaryDark"
+            app:expandedTitleGravity="bottom|center"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="@string/app_name"
+            >
+
+            <ImageView
+                android:id="@+id/titleImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/f"
+                app:layout_collapseMode="parallax" />
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:contentInsetStart="5dp"
+                app:layout_collapseMode="pin">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/f"></ImageView>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="right"
+                android:onClick="shareit"
+                android:elevation="40dp"
+                android:src="@drawable/ic_share">
+            </ImageView>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill_vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f5f5f5">
+
+
+
+        <ImageView
+            android:id="@+id/loadingImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="40dp"
+            android:alpha="0.5"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/croplogo"
+            android:layout_below="@id/webview"/>
+
+        <TextView
+            android:id="@+id/loadtv"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/cinzel_bold"
+            android:layout_below="@id/loadingImage"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.5"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="LOADING ......"/>
+
+
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_centerHorizontal="true"
+
+            android:layout_alignParentTop="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-5772541853617046/4786353556">
+        </com.google.android.gms.ads.AdView>
+
+        <WebView
+            android:id="@+id/webview"
+            android:visibility="gone"
+            android:layout_below="@id/adView2"
+            android:layout_alignParentLeft="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+
+
+    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToHome"
+        android:src="@mipmap/home"
+        android:foregroundTint="@android:color/black"
+        android:backgroundTint="@android:color/black"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="30dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToHome"
+        android:src="@mipmap/home"
+
+        android:layout_gravity="bottom|left"
+        android:layout_margin="30dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        app:fabSize="mini"
+        android:onClick="takeMeToFacebook"
+        android:src="@mipmap/facebook"
+        android:layout_margin="38dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:onClick="takeMeToTwitter"
+        app:fabSize="mini"
+        android:src="@mipmap/twitter"
+        android:layout_margin="38dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="takeMeToInstagram"
+        android:layout_gravity="bottom|right"
+        app:fabSize="mini"
+        android:src="@mipmap/instagram"
+        android:layout_margin="38dp"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToHome"
+        android:src="@mipmap/link"
+        app:fabSize="normal"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="30dp"/>
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-5772541853617046/9847108549">
+    </com.google.android.gms.ads.AdView>
+
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/ic_launcher_background"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:collapsedTitleGravity="start"
+                app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+                app:contentScrim="?attr/colorPrimaryDark"
+                app:expandedTitleGravity="bottom|center"
+                app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+                app:layout_scrollFlags="exitUntilCollapsed|scroll"
+                app:title="@string/app_name"
+
+
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/f"
+                    app:layout_collapseMode="parallax" />
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:contentInsetStart="5dp"
+                    app:layout_collapseMode="pin">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/f">
+                    </ImageView>
+
+
+
+                </androidx.appcompat.widget.Toolbar>
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="right"
+                    android:onClick="shareit"
+                    android:elevation="40dp"
+                    android:src="@drawable/ic_share">
+                </ImageView>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+
+
+    <!-- Now we are going to add content for app good look below collapsing toolbar -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill_vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f5f5f5">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="1300dp"
+                android:alpha="0.5"
+                android:id="@+id/verticalView"
+                android:background="@color/cyanColor"></View>
+
+            <TextView
+                android:id="@+id/welcome"
+
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="50dp"
+                android:fontFamily="@font/cinzel_bold"
+                android:text="Welcome"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/welP"
+                android:layout_below="@id/welcome"
+                android:layout_margin="20dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/cinzel_bold"
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/WelcomePara"/>
+
+            <TextView
+                android:id="@+id/Categ"
+                android:layout_below="@id/welP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/cinzel_bold"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                android:text="Browse your favourite categories"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/row1"
+                android:id="@+id/row2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/travel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="goToContent"
+                    android:layout_margin="11dp"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_travel"
+                    android:text="Travel" />
+
+
+
+                <Button
+                    android:id="@+id/food"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="goToContent"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="11dp"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_food"
+                    android:text="Food" />
+
+                <Button
+                    android:id="@+id/entertainment"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:onClick="goToContent"
+                    android:layout_margin="11dp"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_entertainment"
+                    android:text="Entertainment" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/Categ"
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+
+
+                <Button
+                    android:id="@+id/fitness"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="goToContent"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="11dp"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_fitness"
+                    android:text="Health and fitness"
+                    />
+
+                <Button
+                    android:id="@+id/lifestyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:onClick="goToContent"
+                    android:layout_margin="11dp"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_lifestyle"
+                    android:text="Lifestyle" />
+
+                <Button
+                    android:id="@+id/nutrition"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:onClick="goToContent"
+                    android:layout_margin="11dp"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_nutrition"
+                    android:text="Nutrition" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/row2"
+                android:id="@+id/row3"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/nature"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:onClick="goToContent"
+                    android:layout_margin="11dp"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_nature"
+                    android:text="Nature" />
+
+                <Button
+                    android:id="@+id/ayurveda"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="goToContent"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="11dp"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_ayurveda"
+                    android:text="Ayurveda" />
+
+                <Button
+                    android:id="@+id/beauty"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="goToContent"
+                    android:layout_margin="11dp"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_beautyfashion"
+                    android:text="Beauty" />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/row3"
+                android:id="@+id/row4"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/tech"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="goToContent"
+                    android:layout_margin="11dp"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/tech_circle"
+                    android:text="Technology" />
+
+                <Button
+                    android:id="@+id/music"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="goToContent"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="11dp"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_music"
+                    android:text="Music" />
+
+
+
+
+                <Button
+                    android:id="@+id/automobile"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="goToContent"
+                    android:layout_margin="11dp"
+                    android:fontFamily="@font/cinzel_bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="151dp"
+                    android:drawableTop="@mipmap/small_automobile"
+                    android:text="Automobile" />
+            </LinearLayout>
+
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-5772541853617046/2575123185">
+            </com.google.android.gms.ads.AdView>
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+
+
+        ads:adUnitId="ca-app-pub-5772541853617046/7635878173">
+    </com.google.android.gms.ads.AdView>
+
+    <View
+        android:layout_width="match_parent"
+        android:alpha="0.5"
+        android:layout_height="10dp"
+        android:layout_gravity="bottom"
+        android:id="@+id/viewBottom"
+        android:background="@color/cyanColor"></View>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        app:fabSize="mini"
+        android:onClick="takeMeToFacebook"
+        android:src="@mipmap/facebook"
+        android:layout_margin="38dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:onClick="takeMeToTwitter"
+        app:fabSize="mini"
+        android:src="@mipmap/twitter"
+        android:layout_margin="38dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="takeMeToInstagram"
+        android:layout_gravity="bottom|right"
+        app:fabSize="mini"
+        android:src="@mipmap/instagram"
+        android:layout_margin="38dp"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/link"
+        app:fabSize="normal"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="30dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
